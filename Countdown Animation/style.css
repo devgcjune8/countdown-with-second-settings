@@ -1,0 +1,247 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+    background: radial-gradient(rgb(12, 77, 129), rgb(4, 6, 49));
+}
+
+.counter {
+    position: fixed;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    text-align: center;
+    text-transform: uppercase;
+}
+.counter h3 {
+    color: rgb(0, 247, 255);
+    font-size: 2em;
+    margin-bottom: 4em;
+}
+
+.counter.hidden {
+    transform: translate(-50%, -50%) scale(0);
+    animation: hide 0.50s ease-out;
+}
+
+@keyframes hide {
+    0% {
+        transform: translate(-50%, -50%) scale(1)
+    } 
+    100% {
+        transform: translate(-50%, -50%) scale(0)
+    }
+    
+}
+
+.end-countdown h1 {
+    position: fixed;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 45%;
+    transform: translate(-50%, -50%) scale(0);
+    color: rgb(240, 236, 0);
+    font-size: 4em;
+}
+
+.end-countdown h1.shown {
+    transform: translate(-50%, -50%) scale(1);
+    animation: show 1s ease-in-out;
+} 
+
+.end-countdown h2 {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgb(97, 223, 240);
+}
+
+.end-countdown h2.hide {
+    display: none;
+}
+
+.set-timer.hide {
+    display: none;
+}
+
+
+
+
+@keyframes show {
+    0% {
+        color: rgb(14, 14, 27);
+        transform: translate(-50%, -50%) scale(0)
+    } 
+    43% {
+        color: rgb(59, 99, 99);
+        transform: translate(-50%, -50%) scale(4.3)
+    }
+    100% {
+        color: rgb(240, 236, 0);;
+        transform: translate(-50%, -50%) scale(1.5)
+    }
+    
+}
+
+.numbers {
+    font-size: 6em;
+    overflow: hidden;
+    width: 40vw;
+    height: 20vh;
+    font-weight: 600;
+    color: rgb(116, 159, 240);
+}
+
+
+.numbers .nums {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 1.6em;
+    transform: translate(-150%, -50%) scale(0);
+    
+}
+
+.nums.visible {
+    transform: translate(-50%, -50%);
+    animation: slideIn 0.5s ease-in;
+}
+.nums.start {
+    animation: slideIn 0.5s ease-in;
+}
+.nums.invisible {
+    animation: slideOut 0.5s ease-out;
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translate(-150%, -50%) scale(0);
+    }
+    25% {
+        color:rgb(3, 141, 196);
+        transform: translate(-125%, -50%) scale(0.25);
+    }
+    50% {
+        color: rgb(58, 196, 250);
+        transform: translate(-100%, -50%) scale(0.50);
+    }
+    75% {
+        color: rgb(58, 196, 250);
+        transform: translate(-75%, -50%) scale(0.75);
+    }
+    100% {
+        color: rgb(167, 215, 255);
+        transform: translate(-50%, -50%) scale(1);
+    }
+    
+}
+
+@keyframes slideOut {
+    0% {
+        color: rgb(167, 215, 255);
+        transform: translate(-25%, -50%) scale(1);
+    }
+    25% {
+        color: rgb(58, 196, 250);
+        transform: translate(0%, -50%) scale(0.75);
+    }
+    50% {
+        color: rgb(58, 196, 250);
+        transform: translate(25%, -50%) scale(0.50);
+    }
+    75% {
+        color:rgb(3, 141, 196);
+        transform: translate(50%, -50%) scale(0.25);
+    }
+    100% {
+        transform: translate(75%, -50%) scale(0);
+    }
+    
+}
+
+.run {
+    margin: 0 auto;
+    color: white;
+    justify-content: center;
+    width: 300px;
+    background: rgb(68, 68, 73);
+    height: 3em;
+    width: 9em;
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.2em;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px 10px;
+}
+.run:hover {
+    transform: translateX(-50%);
+    background-color:rgb(0, 189, 247)
+}
+
+.run:active {
+    transform: translateX(-50%) scale(0.98);
+}
+
+.run.hide {
+    display: none;
+}
+
+.set-timer {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;  
+    width: 200px;
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: 0.43s;
+}
+
+
+
+
+
+.set-timer button {
+    color: white;
+    border: none;
+    height: 1.5em;
+    width: 1.5em;
+    font-size: 2em;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 10%;
+}
+
+
+
+.set-timer button:hover {
+    opacity: 0.7;
+}
+
+.set-timer button:active {
+    transform: scale(0.85);
+}
+
+.set-timer .dec {
+    background-color: rgb(0, 189, 247);
+}
+
+.set-timer .inc {
+    background-color: rgb(17, 86, 107);
+}
+
+.set-timer span {
+    font-size: 2.2em;
+    font-weight: 700;
+    color: rgb(0, 147, 206);
+}
